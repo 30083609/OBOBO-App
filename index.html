@@ -41,15 +41,26 @@
             </div>
         </div>
         <div class="instructions-box">
-            <h2>How to Use </h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <h2>How to Use</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
         </div>
         <footer class="footer">
             <p>&copy; COMP.5211 2024</p>
-            <div id="clock-display"></div> <!-- Clock Display Here -->
+            <div id="clock" class="time-display"></div> <!-- Clock section -->
         </footer>
     </div>
     <audio id="alarm-sound" src="alert-alarm.wav"></audio>
-    <script src="script.js"></script>
+    <script>
+        // Real-time clock display functionality
+        function updateClock() {
+            const now = new Date();
+            const currentTime = now.toLocaleTimeString();
+            document.getElementById('clock').textContent = `Current Time: ${currentTime}`;
+        }
+        setInterval(updateClock, 1000);
+        updateClock();
+
+        // Your existing JS code for Stopwatch, Lap Timer, and Alarm would go here
+    </script>
 </body>
 </html>
